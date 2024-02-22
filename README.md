@@ -13,6 +13,11 @@ The `annotateOthers` script is designed to read information from a TSV file cont
    python annotateOthers.py -i input_file.tsv -o output_file.tsv -f [tsv or bed6]
 
 ## Options
-- Specify the input TSV file using the -i flag.
-- Specify the output file with the -o flag.
-- The script also supports saving in BED9 format using the -f bed9 flag.
+- Specify the input TSV file using the `-i` flag.
+- Specify the output name with the `-o` flag.
+- The script also supports saving in BED9 format using the `-f` bed9 flag or tsv, default format ("tsv") if none is provided.
+    - `-f`: Specify the output format (default is TSV, supports 'tsv' or 'bed9').
+
+### Dependencies
+- Python 3.9.7
+- pandas (for data manipulation)
