@@ -48,9 +48,13 @@ def annotate_others(input_file, output_file, output_format="tsv"):
     # Save the new dataframe as an output file with tab delimiter (\t) or BED9 format
     # The dataframe index is not included in the output file
     if output_format.lower() == "bed9":
+        output_file += ".bed"
         annotated_DF.to_csv(output_file, index=False, sep='\t', header=False)
-    else:
+    elif output_format.lower() == "tsv":
+        output_file += ".tsv"
         annotated_DF.to_csv(output_file, index=False, sep='\t')
+    else:
+        print("Invalid output format. Choose 'tsv' or 'bed9' or leave it blank for default 'tsv' format.")
 
 if __name__ == "__main__":
     # Parse command-line arguments
